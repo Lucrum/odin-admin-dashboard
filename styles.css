@@ -1,9 +1,10 @@
 :root {
   --light-color: white;
   --secondary-color: #f97316;
+  --tertiary-color: #515052; 
   --background-color: #e2e8f0;
   --standard-margin: 2rem;
-  --standard-corner-radius: 1rem;
+  --standard-corner-radius: .6rem;
 }
 
 body {
@@ -51,39 +52,7 @@ div.search > input[type=text] {
   justify-content: space-between;
 }
 
-.central-container {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  background-color: var(--background-color);
-  overflow: scroll;
-}
-
-.central-container > .project-area {
-  grid-column: 1 / 2;
-  grid-row: 1 / 3;
-  padding: 20px;
-}
-
-.project-area > div.projects-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-template-rows: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.projects-container .project {
-  background-color: var(--light-color);
-  border-radius: var(--standard-corner-radius);
-}
-
-.central-container > div.announcements {
-  grid-column: 2 / 3;
-}
-
-.central-container > div.trending {
-  grid-column: 2/ 3;
-}
+/* Side bar */
 
 .side-bar {
   background-color: var(--secondary-color);
@@ -92,3 +61,70 @@ div.search > input[type=text] {
   grid-column: 1 / 2;
 }
 
+/* Central container */
+
+.central-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr 6fr 1fr 6fr;
+  background-color: var(--background-color);
+  overflow: scroll;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.central-container h2 {
+  margin: 0px;
+  align-self: end;
+}
+
+.central-container > .projects-title {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.central-container > .projects-container {
+  grid-area: 2 / 1 / span 3 / 2;
+  /* padding: 20px; */
+}
+
+.central-container > .announcements-title {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.central-container > .announcements-container {
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+.central-container > .trending-title {
+  grid-area: 3 / 2 / 4 / 3;
+}
+
+.central-container > .trending-container {
+  grid-area: 4 / 2 / 5 / 3;
+}
+
+.central-container > div.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(3, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.projects-container .project {
+  position: relative;
+  background-color: var(--light-color);
+  border-radius: var(--standard-corner-radius);
+  padding: 1rem;
+  border-left: .7rem solid var(--tertiary-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.project > div.icon-row {
+  margin-top: auto;
+  align-self: end;
+}
+
+a img {
+  height: 2rem;
+}
