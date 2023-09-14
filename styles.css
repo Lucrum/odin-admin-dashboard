@@ -7,6 +7,7 @@
   --standard-corner-radius: .6rem;
   --small-icon-dimension: 50px;
   --large-icon-dimension: 100px;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -136,6 +137,7 @@ button:hover {
   margin: 2rem 2rem;
   align-items: center;
   gap: 1rem;
+  font-family: 'Fira Sans', sans-serif;
 }
 
 .side-bar li {
@@ -156,6 +158,7 @@ button:hover {
 .side-bar a {
   color: var(--light-color);
   text-decoration: none;
+  font-weight: bold;
 }
 
 /* Central container */
